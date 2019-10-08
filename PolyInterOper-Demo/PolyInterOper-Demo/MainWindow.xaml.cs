@@ -64,5 +64,28 @@ namespace PolyInterOper_Demo
             
 
         }
+
+        private void btnPlaceMe_Click(object sender, RoutedEventArgs e) {
+            int row, col;
+            string name, rowString, colString;
+            name = txtName.Text;
+            rowString = txtRow.Text;
+            colString = txtCol.Text;
+
+            int.TryParse(rowString, out row);
+            int.TryParse(colString, out col);
+
+            //TextBlock tbName = new TextBlock();
+            //tbName.Text = name;
+            Button tbName = new Button();
+            Image img = new Image();
+            //img.Source = new ImageSource()
+            //tbName.Content = imgBomb;
+            Grid.SetColumn(tbName, col);
+            Grid.SetRow(tbName, row);
+            grdShow.Children.Add(tbName);
+            
+
+        }
     }
 }
